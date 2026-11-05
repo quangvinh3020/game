@@ -289,6 +289,17 @@ Object.assign(window.Game, {
         }
     },
 
+    resetGameProgress() {
+        this.state.currentScene = 'intro';
+        this.state.currentZone = 0;
+        this.state.loveMeter = 0;
+        this.state.itemsCollected = [];
+        this.state.lettersUnlocked = ['letter1'];
+        this.state.miniGamesCompleted = [];
+        this.saveGame();
+        this.updateHUD();
+    },
+
     getDaysTogether() {
         const start = new Date('2023-11-01');
         const now = new Date();

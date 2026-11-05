@@ -291,7 +291,8 @@
             const replayBtn = document.getElementById('ending-replay-btn');
             if (replayBtn) {
                 replayBtn.onclick = () => {
-                    if (confirm("Em có muốn quay lại từ màn hình mở đầu không? 💕")) {
+                    if (confirm("Em có muốn chơi lại từ đầu không? 💕")) {
+                        Game.resetGameProgress();
                         Game.changeScene('title');
                     }
                 };

@@ -173,16 +173,17 @@
             Game.updateHUD();
             GameAudio.playBGM('zone4');
 
-            setTimeout(() => {
-                Game.showDialogue('zone4');
-            }, 500);
+            const gameBtn = document.getElementById('zone4-game-btn');
+            const nextBtn = document.getElementById('zone4-next-btn');
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (gameBtn) gameBtn.style.display = 'none';
 
-            if (Game.state.miniGamesCompleted.includes('cooking')) {
-                const gameBtn = document.getElementById('zone4-game-btn');
-                const nextBtn = document.getElementById('zone4-next-btn');
-                if (gameBtn) gameBtn.style.display = 'none';
-                if (nextBtn) nextBtn.style.display = 'block';
-            }
+            // Smooth storytelling: dialogue leads directly to cooking minigame
+            Game.showDialogue('zone4', () => {
+                Game.startMiniGame('cooking', () => {
+                    this.onMiniGameComplete();
+                });
+            });
         },
 
         onMiniGameComplete() {
@@ -192,8 +193,8 @@
             Game.addLove(20);
             Game.saveGame();
 
-            const gameBtn = document.getElementById('zone4-game-btn');
             const nextBtn = document.getElementById('zone4-next-btn');
+            const gameBtn = document.getElementById('zone4-game-btn');
             if (gameBtn) gameBtn.style.display = 'none';
 
             Game.showDialogue('zone4_complete', () => {

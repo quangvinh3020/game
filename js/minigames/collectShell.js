@@ -16,7 +16,7 @@
         container: null,
         onComplete: null,
         score: 0,
-        goal: 15,
+        goal: 10,
         timeLeft: 45,
         failures: 0,
         gameActive: false,
@@ -231,7 +231,7 @@
                     <div class="cs-title">🐚 Nhặt Vỏ Ốc Tình Yêu 🐚</div>
                     <div class="cs-stats">
                         <span>⏱️ <span class="cs-timer">45</span>s</span>
-                        <span>🐚 <span class="cs-score">0</span>/15</span>
+                        <span>🐚 <span class="cs-score">0</span>/10</span>
                     </div>
                 </div>
                 <div class="cs-sky">
@@ -279,7 +279,14 @@
                 }
             }, 1000);
 
-            // Spawn items
+            // Spawn items immediately & schedule next
+            setTimeout(() => {
+                if (this.gameActive) {
+                    this._spawnItem();
+                    this._spawnItem();
+                    this._spawnItem();
+                }
+            }, 100);
             this._scheduleSpawn();
         },
 
@@ -315,10 +322,8 @@
         },
 
         _spawnItem() {
-            if (!this.gameActive) return;
+            if (!this.gameActive || !this.els.sand) return;
             const type = this._pickItemType();
-            const sandRect = this.els.sand.getBoundingClientRect();
-            if (!sandRect || sandRect.width === 0) return;
 
             const x = 5 + Math.random() * 75; // percentage
             const y = 10 + Math.random() * 70; // percentage

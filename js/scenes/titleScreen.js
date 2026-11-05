@@ -236,6 +236,7 @@
             // Event listeners
             document.getElementById('title-start-btn').addEventListener('click', function() {
                 GameAudio.playSFX('click');
+                Game.resetGameProgress();
                 Game.changeScene('intro');
             });
 

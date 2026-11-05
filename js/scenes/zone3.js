@@ -195,17 +195,17 @@
                 window.GameParticles.bubbles(12, 4000);
             }
 
-            setTimeout(() => {
-                Game.showDialogue('zone3');
-            }, 500);
+            const gameBtn = document.getElementById('zone3-game-btn');
+            const nextBtn = document.getElementById('zone3-next-btn');
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (gameBtn) gameBtn.style.display = 'none';
 
-            // If already completed this zone's minigame
-            if (Game.state.miniGamesCompleted.includes('collectShell')) {
-                const gameBtn = document.getElementById('zone3-game-btn');
-                const nextBtn = document.getElementById('zone3-next-btn');
-                if (gameBtn) gameBtn.style.display = 'none';
-                if (nextBtn) nextBtn.style.display = 'block';
-            }
+            // Smooth storytelling: dialogue leads directly to minigame
+            Game.showDialogue('zone3', () => {
+                Game.startMiniGame('collectShell', () => {
+                    this.onMiniGameComplete();
+                });
+            });
         },
 
         onMiniGameComplete() {
@@ -215,8 +215,8 @@
             Game.addLove(20);
             Game.saveGame();
 
-            const gameBtn = document.getElementById('zone3-game-btn');
             const nextBtn = document.getElementById('zone3-next-btn');
+            const gameBtn = document.getElementById('zone3-game-btn');
             if (gameBtn) gameBtn.style.display = 'none';
 
             Game.showDialogue('zone3_complete', () => {
