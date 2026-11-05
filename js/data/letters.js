@@ -20,10 +20,10 @@ window.GameData.letters = [
     },
     {
         id: 'letter3',
-        title: 'Đà Lạt Mộng Mơ 🌲',
+        title: 'Lần Đầu Đi Đà Lạt 🌲',
         zone: 'zone2',
-        date: '01/11/2023',
-        content: `Đà Lạt, 01/11/2023.\n\nChuyến đi đầu tiên của hai đứa mình. Trời Đà Lạt sớm tinh mơ se lạnh, sương giăng khắp đồi thông, nhưng bàn tay em đặt trọn trong túi áo khoác của anh thì ấm áp vô cùng.\n\nNhớ ly cà phê nóng bên triền dốc, nhớ những lúc hai đứa ngắm hoàng hôn buông xuống hồ Tuyền Lâm. Giây phút ấy, anh đã tự nhủ với lòng: người con gái này, anh nhất định phải nắm tay đi hết cả cuộc đời. ☕`
+        date: '28/04/2023',
+        content: `Đà Lạt, 28/04/2023.\n\nChuyến đi Đà Lạt đầu tiên của hai đứa mình. Trời Đà Lạt sớm tinh mơ se lạnh, sương giăng khắp đồi thông, nhưng bàn tay em đặt trọn trong túi áo khoác của anh thì ấm áp vô cùng.\n\nNhớ ly cà phê nóng bên triền dốc, nhớ những lúc hai đứa ngắm hoàng hôn buông xuống hồ Tuyền Lâm. Giây phút ấy, anh đã tự nhủ với lòng: người con gái này, anh nhất định phải nắm tay đi hết cả cuộc đời. ☕`
     },
     {
         id: 'letter4',

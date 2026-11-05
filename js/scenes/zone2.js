@@ -370,11 +370,16 @@
                     </div>
                 </div>
 
+                <div class="dalat-polaroid" onclick="Game.viewPhoto('dalat')" style="position: absolute; top: 65px; left: 16px; background: #fff; padding: 5px 5px 10px 5px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); border-radius: 4px; transform: rotate(-5deg); z-index: 12; cursor: pointer;">
+                    <div style="width: 65px; height: 86px; background: url('asset/photos/landaudalat.jpg') center/cover no-repeat; border-radius: 2px;"></div>
+                    <div style="font-size: 7px; font-family: 'Press Start 2P'; color: #2C3E50; margin-top: 5px; text-align: center;">28/04/23</div>
+                </div>
+
                 <div class="zone-title">
                     🏔️ Đà Lạt Mộng Mơ
                     <div class="zone-subtitle">Zone 2</div>
                 </div>
-                <div class="date-display">📅 01/11/2023</div>
+                <div class="date-display">📅 28/04/2023</div>
 
                 <button class="next-btn" id="zone2-next-btn">Tiếp tục →</button>
             `;

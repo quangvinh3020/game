@@ -207,8 +207,8 @@ Object.assign(window.Game, {
 
         const photoMap = {
             dalat: {
-                src: 'asset/photos/datlat.jpg',
-                caption: 'Đà Lạt Mộng Mơ — 01/11/2023 🌲'
+                src: 'asset/photos/landaudalat.jpg',
+                caption: 'Lần Đầu Đi Đà Lạt — 28/04/2023 🌲'
             },
             beach: {
                 src: 'asset/photos/bien.jpg',
@@ -219,12 +219,12 @@ Object.assign(window.Game, {
                 caption: 'Những Bữa Ăn Ngon Cùng Nhau 🍜'
             },
             future: {
-                src: 'asset/photos/datlat.jpg',
+                src: 'asset/photos/landaudalat.jpg',
                 caption: 'Lời Hứa Mãi Mãi — Quang Vinh & Việt Nga 💍'
             }
         };
 
-        const item = photoMap[photoId] || { src: 'asset/photos/datlat.jpg', caption: 'Kỷ niệm đôi ta 💕' };
+        const item = photoMap[photoId] || { src: 'asset/photos/landaudalat.jpg', caption: 'Kỷ niệm đôi ta 💕' };
 
         if (captionEl) captionEl.textContent = item.caption;
         if (imgEl) {

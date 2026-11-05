@@ -207,9 +207,9 @@
                         <h2>📸 ALBUM KỶ NIỆM</h2>
                         <div class="photo-grid">
                             <div class="photo-card" style="--r: -2;" onclick="Game.viewPhoto('dalat')">
-                                <div class="photo-thumb" style="background: url('asset/photos/datlat.jpg') center/cover no-repeat;"></div>
-                                <div class="photo-caption">Đà Lạt Mộng Mơ</div>
-                                <div class="photo-date">01/11/2023</div>
+                                <div class="photo-thumb" style="background: url('asset/photos/landaudalat.jpg') center/cover no-repeat;"></div>
+                                <div class="photo-caption">Lần Đầu Đi Đà Lạt</div>
+                                <div class="photo-date">28/04/2023</div>
                             </div>
                             <div class="photo-card" style="--r: 2;" onclick="Game.viewPhoto('beach')">
                                 <div class="photo-thumb" style="background: url('asset/photos/bien.jpg') center/cover no-repeat;"></div>

@@ -25,8 +25,8 @@ window.GameData.dialogues = {
 
     zone2: [
         { speaker: '', text: 'Đà Lạt mộng mơ hiện ra trước mắt... Những rặng thông xanh ngát trong làn sương mờ 🌲', portrait: null },
-        { speaker: 'Việt Nga', text: 'Ôi, chuyến đi ngày 01/11/2023! Trời lạnh nhưng trong lòng ấm áp vô cùng.', portrait: 'nga' },
-        { speaker: 'Quang Vinh', text: '"Em còn nhớ bức ảnh kỷ niệm tụi mình chụp bên đồi thông không? Hãy cùng ghép lại từng mảnh ký ức nhé! 🧩"', portrait: 'vinh' }
+        { speaker: 'Việt Nga', text: 'Ôi, chuyến đi Đà Lạt đầu tiên của hai đứa mình ngày 28/04/2023! Trời lạnh nhưng trong lòng ấm áp vô cùng.', portrait: 'nga' },
+        { speaker: 'Quang Vinh', text: '"Em còn nhớ bức ảnh kỷ niệm lần đầu đi Đà Lạt tụi mình chụp không? Hãy cùng ghép lại từng mảnh ký ức nhé! 🧩"', portrait: 'vinh' }
     ],
     zone2_complete: [
         { speaker: 'Việt Nga', text: 'Bức tranh Đà Lạt hiện ra nguyên vẹn rồi! Đẹp quá đi mất...', portrait: 'nga' },

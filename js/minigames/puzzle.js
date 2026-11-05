@@ -201,7 +201,7 @@
 
             // Build reference image
             this.els.ref.innerHTML = `
-                <div style="width: 80px; height: 80px; background: url('asset/photos/datlat.jpg') center/cover no-repeat; border: 2px solid #2C3E50; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>
+                <div style="width: 80px; height: 106px; background: url('asset/photos/landaudalat.jpg') center/cover no-repeat; border: 2px solid #fff; border-radius: 4px; box-shadow: 0 3px 8px rgba(0,0,0,0.4);"></div>
             `;
 
             // Event handlers
@@ -286,12 +286,12 @@
                 } else {
                     const col = (val - 1) % 3;
                     const row = Math.floor((val - 1) / 3);
-                    tile.style.backgroundImage = "url('asset/photos/datlat.jpg')";
+                    tile.style.backgroundImage = "url('asset/photos/landaudalat.jpg')";
                     tile.style.backgroundSize = "300% 300%";
                     tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
                     tile.style.backgroundRepeat = "no-repeat";
                     tile.innerHTML = `
-                        <span class="pz-tile-label" style="background: rgba(0,0,0,0.65); color: #fff; padding: 2px 4px; border-radius: 2px;">${val}</span>
+                        <span class="pz-tile-label" style="background: rgba(0,0,0,0.7); color: #fff; padding: 2px 4px; border-radius: 2px;">${val}</span>
                     `;
                 }
                 this.els.grid.appendChild(tile);
@@ -356,10 +356,10 @@
                 overlay.innerHTML = `
                     <div class="pz-result-text">
                         Đẹp quá! 🧩<br><br>
-                        Kỷ niệm Đà Lạt 01/11/2023<br>
+                        Lần đầu đi Đà Lạt: 28/04/2023 💕<br>
                         Hoàn thành trong ${this.moves} bước!
                     </div>
-                    <div style="width: 220px; height: 220px; background: url('asset/photos/datlat.jpg') center/cover no-repeat; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); margin: 15px auto;"></div>
+                    <div style="width: 200px; height: 266px; background: url('asset/photos/landaudalat.jpg') center/cover no-repeat; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); margin: 12px auto;"></div>
                 `;
                 this.els.wrap.appendChild(overlay);
 
