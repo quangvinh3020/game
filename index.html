@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Hành Trình Của Chúng Mình 💕 — Quang Vinh & Việt Nga</title>
+    
+    <!-- Google Fonts for Pixel & Romance Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- TOP HUD (Visible in game zones) -->
+        <header id="game-hud">
+            <div class="hud-section love-meter-wrap">
+                <span class="heartbeat" style="font-size: 16px;">💖</span>
+                <div class="love-bar-track">
+                    <div id="love-fill" class="love-bar-fill"></div>
+                </div>
+                <span id="love-text" class="hud-badge">0%</span>
+            </div>
+
+            <div class="hud-section">
+                <span style="font-size: 14px;">📦</span>
+                <span id="item-count" class="hud-badge">0/20</span>
+            </div>
+
+            <div class="hud-section">
+                <span id="zone-badge" class="hud-badge" style="color: #ff9ff3;"></span>
+                <button id="hud-sound-btn" class="sound-toggle-btn" title="Bật/Tắt âm thanh">🔊</button>
+            </div>
+        </header>
+
+        <!-- SCENES -->
+        <section id="scene-title" class="scene active"></section>
+        <section id="scene-intro" class="scene"></section>
+        <section id="scene-zone1" class="scene"></section>
+        <section id="scene-zone2" class="scene"></section>
+        <section id="scene-zone3" class="scene"></section>
+        <section id="scene-zone4" class="scene"></section>
+        <section id="scene-zone5" class="scene"></section>
+        <section id="scene-ending" class="scene"></section>
+
+        <!-- DIALOGUE OVERLAY (Stardew Valley RPG Style) -->
+        <div id="dialogue-overlay" class="hidden">
+            <div class="dialogue-box">
+                <div id="dialogue-portrait" class="dialogue-portrait"></div>
+                <div class="dialogue-main">
+                    <div>
+                        <div id="dialogue-speaker" class="dialogue-speaker"></div>
+                        <div id="dialogue-text" class="dialogue-text"></div>
+                    </div>
+                    <div id="dialogue-choices" class="dialogue-choices"></div>
+                    <div id="dialogue-continue" class="dialogue-continue">▼ Chạm để tiếp tục</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FULL-SCREEN MINI GAME OVERLAY -->
+        <div id="minigame-overlay" class="hidden">
+            <div id="minigame-container"></div>
+        </div>
+
+        <!-- PARTICLE CANVAS -->
+        <div id="particle-canvas"></div>
+
+        <!-- TRANSITION OVERLAY -->
+        <div id="transition-overlay"></div>
+
+        <!-- LOVE LETTER MODAL -->
+        <div id="letter-modal" class="game-modal hidden">
+            <div class="modal-content letter-modal-paper">
+                <button id="letter-modal-close" class="modal-close-btn">&times;</button>
+                <div id="modal-letter-title" class="letter-title">Lá Thư Tình</div>
+                <div id="modal-letter-date" class="letter-date">01/11/2023</div>
+                <div id="modal-letter-content" class="letter-body"></div>
+            </div>
+        </div>
+
+        <!-- PHOTO VIEWER MODAL -->
+        <div id="photo-modal" class="game-modal hidden">
+            <div class="modal-content" style="text-align: center; background: #fff;">
+                <button id="photo-modal-close" class="modal-close-btn">&times;</button>
+                <div style="font-size: 55px; margin: 15px 0;">📸</div>
+                <div id="photo-modal-caption" style="font-family: 'Press Start 2P'; font-size: 11px; color: #2c3e50; line-height: 1.6; margin-top: 10px;"></div>
+                <div style="font-size: 12px; color: #888; margin-top: 15px;">💕 Khoảnh khắc đẹp của Vinh & Nga 💕</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts (Ordered Dependency Graph) -->
+    <!-- Bootstrap Game namespace -->
+    <script>
+        window.Game = window.Game || {
+            scenes: {},
+            miniGames: {},
+            registerScene(id, s) { this.scenes[id] = s; },
+            registerMiniGame(id, g) { this.miniGames[id] = g; }
+        };
+    </script>
+
+    <!-- 1. Engine & Utilities -->
+    <script src="js/engine/storage.js"></script>
+    <script src="js/engine/audio.js"></script>
+    <script src="js/engine/dialogue.js"></script>
+    <script src="js/engine/particles.js"></script>
+    <script src="js/engine/transition.js"></script>
+
+    <!-- 2. Main Game Controller -->
+    <script src="js/main.js"></script>
+
+    <!-- 3. Data Definitions -->
+    <script src="js/data/items.js"></script>
+    <script src="js/data/letters.js"></script>
+    <script src="js/data/dialogues.js"></script>
+
+    <!-- 4. Mini Games -->
+    <script src="js/minigames/catchFlower.js"></script>
+    <script src="js/minigames/puzzle.js"></script>
+    <script src="js/minigames/collectShell.js"></script>
+    <script src="js/minigames/cooking.js"></script>
+
+    <!-- 5. Game Scenes -->
+    <script src="js/scenes/titleScreen.js"></script>
+    <script src="js/scenes/intro.js"></script>
+    <script src="js/scenes/zone1.js"></script>
+    <script src="js/scenes/zone2.js"></script>
+    <script src="js/scenes/zone3.js"></script>
+    <script src="js/scenes/zone4.js"></script>
+    <script src="js/scenes/zone5.js"></script>
+    <script src="js/scenes/ending.js"></script>
+</body>
+</html>

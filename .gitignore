@@ -1,0 +1,6 @@
+# Node & temporary files
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+server.js
