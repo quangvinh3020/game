@@ -205,14 +205,32 @@ Object.assign(window.Game, {
         const captionEl = document.getElementById('photo-modal-caption');
         const imgEl = document.getElementById('photo-modal-img');
 
-        const captions = {
-            dalat: 'Đà Lạt Mộng Mơ — 01/11/2023 🌲',
-            beach: 'Biển Xanh Rì Rào — Kỷ niệm ngọt ngào 🌊',
-            food: 'Những Bữa Ăn Ngon Cùng Nhau 🍜',
-            future: 'Lời Hứa Mãi Mãi — Quang Vinh & Việt Nga 💍'
+        const photoMap = {
+            dalat: {
+                src: 'asset/photos/datlat.jpg',
+                caption: 'Đà Lạt Mộng Mơ — 01/11/2023 🌲'
+            },
+            beach: {
+                src: 'asset/photos/bien.jpg',
+                caption: 'Biển Xanh Rì Rào — Kỷ niệm ngọt ngào 🌊'
+            },
+            food: {
+                src: 'asset/photos/quanan.jpg',
+                caption: 'Những Bữa Ăn Ngon Cùng Nhau 🍜'
+            },
+            future: {
+                src: 'asset/photos/datlat.jpg',
+                caption: 'Lời Hứa Mãi Mãi — Quang Vinh & Việt Nga 💍'
+            }
         };
 
-        if (captionEl) captionEl.textContent = captions[photoId] || 'Kỷ niệm đôi ta 💕';
+        const item = photoMap[photoId] || { src: 'asset/photos/datlat.jpg', caption: 'Kỷ niệm đôi ta 💕' };
+
+        if (captionEl) captionEl.textContent = item.caption;
+        if (imgEl) {
+            imgEl.src = item.src;
+            imgEl.style.display = 'block';
+        }
         if (modal) {
             modal.classList.remove('hidden');
             modal.style.display = 'flex';

@@ -207,22 +207,22 @@
                         <h2>📸 ALBUM KỶ NIỆM</h2>
                         <div class="photo-grid">
                             <div class="photo-card" style="--r: -2;" onclick="Game.viewPhoto('dalat')">
-                                <div class="photo-thumb" style="background: linear-gradient(135deg, #a8e6cf, #dcedc1);">🌲☕</div>
+                                <div class="photo-thumb" style="background: url('asset/photos/datlat.jpg') center/cover no-repeat;"></div>
                                 <div class="photo-caption">Đà Lạt Mộng Mơ</div>
                                 <div class="photo-date">01/11/2023</div>
                             </div>
                             <div class="photo-card" style="--r: 2;" onclick="Game.viewPhoto('beach')">
-                                <div class="photo-thumb" style="background: linear-gradient(135deg, #74b9ff, #81ecec);">🌊🏖️</div>
+                                <div class="photo-thumb" style="background: url('asset/photos/bien.jpg') center/cover no-repeat;"></div>
                                 <div class="photo-caption">Biển Xanh Rì Rào</div>
                                 <div class="photo-date">Mùa hè rực rỡ</div>
                             </div>
                             <div class="photo-card" style="--r: 1;" onclick="Game.viewPhoto('food')">
-                                <div class="photo-thumb" style="background: linear-gradient(135deg, #fab1a0, #ff7675);">🍜🏮</div>
+                                <div class="photo-thumb" style="background: url('asset/photos/quanan.jpg') center/cover no-repeat;"></div>
                                 <div class="photo-caption">Góc Quán Quen</div>
                                 <div class="photo-date">Những chiều tan ca</div>
                             </div>
                             <div class="photo-card" style="--r: -1;" onclick="Game.viewPhoto('future')">
-                                <div class="photo-thumb" style="background: linear-gradient(135deg, #a29bfe, #fd79a8);">💍✨</div>
+                                <div class="photo-thumb" style="background: url('asset/photos/datlat.jpg') center/cover no-repeat;"></div>
                                 <div class="photo-caption">Lời Hứa Tương Lai</div>
                                 <div class="photo-date">Mãi mãi về sau</div>
                             </div>

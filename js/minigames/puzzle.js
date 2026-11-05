@@ -200,18 +200,9 @@
             this.els.shuffleBtn = wrap.querySelector('.pz-shuffle-btn');
 
             // Build reference image
-            TILES.forEach(t => {
-                const d = document.createElement('div');
-                d.className = 'pz-ref-tile';
-                d.style.background = t.bg;
-                d.innerHTML = `<span style="font-size:12px">${t.emoji}</span>`;
-                this.els.ref.appendChild(d);
-            });
-            // empty tile in ref
-            const emptyRef = document.createElement('div');
-            emptyRef.className = 'pz-ref-tile';
-            emptyRef.style.background = '#1a252f';
-            this.els.ref.appendChild(emptyRef);
+            this.els.ref.innerHTML = `
+                <div style="width: 80px; height: 80px; background: url('asset/photos/datlat.jpg') center/cover no-repeat; border: 2px solid #2C3E50; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>
+            `;
 
             // Event handlers
             this.els.hintBtn.addEventListener('click', () => this._showHint());
@@ -293,11 +284,14 @@
                 if (val === 0) {
                     tile.classList.add('pz-tile-empty');
                 } else {
-                    const tileData = TILES[val - 1];
-                    tile.style.background = tileData.bg;
+                    const col = (val - 1) % 3;
+                    const row = Math.floor((val - 1) / 3);
+                    tile.style.backgroundImage = "url('asset/photos/datlat.jpg')";
+                    tile.style.backgroundSize = "300% 300%";
+                    tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+                    tile.style.backgroundRepeat = "no-repeat";
                     tile.innerHTML = `
-                        <span class="pz-tile-label">${tileData.label}</span>
-                        <span>${tileData.emoji}</span>
+                        <span class="pz-tile-label" style="background: rgba(0,0,0,0.65); color: #fff; padding: 2px 4px; border-radius: 2px;">${val}</span>
                     `;
                 }
                 this.els.grid.appendChild(tile);
@@ -359,22 +353,13 @@
                 const overlay = document.createElement('div');
                 overlay.className = 'pz-result-overlay';
 
-                // Build complete scene
-                let sceneTiles = '';
-                TILES.forEach(t => {
-                    sceneTiles += `<div class="pz-complete-tile" style="background:${t.bg}">${t.emoji}</div>`;
-                });
-                // Add "flower" for last tile
-                sceneTiles += `<div class="pz-complete-tile" style="background:linear-gradient(180deg,#FFB6C1 0%,#FF69B4 100%)">💕</div>`;
-
                 overlay.innerHTML = `
                     <div class="pz-result-text">
                         Đẹp quá! 🧩<br><br>
-                        Hoàn thành trong<br>${this.moves} bước!
+                        Kỷ niệm Đà Lạt 01/11/2023<br>
+                        Hoàn thành trong ${this.moves} bước!
                     </div>
-                    <div class="pz-complete-scene">
-                        ${sceneTiles}
-                    </div>
+                    <div style="width: 220px; height: 220px; background: url('asset/photos/datlat.jpg') center/cover no-repeat; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); margin: 15px auto;"></div>
                 `;
                 this.els.wrap.appendChild(overlay);
 
